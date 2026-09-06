@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="BMR, TDEE and daily calorie goals, calculated on your device.">
+  <meta property="og:title" content="SHWE TIER TDEE Calculator">
+  <meta property="og:description" content="BMR, TDEE and daily calorie goals, calculated on your device.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SHWE TIER">
+  <meta property="og:url" content="https://jeeshwediy-coder.github.io/?v=4">
+  <meta property="og:image" content="https://jeeshwediy-coder.github.io/social-preview.png?v=4">
+  <meta property="og:image:secure_url" content="https://jeeshwediy-coder.github.io/social-preview.png?v=4">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="SHWE TIER logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SHWE TIER TDEE Calculator">
+  <meta name="twitter:description" content="BMR, TDEE and daily calorie goals, calculated on your device.">
+  <meta name="twitter:image" content="https://jeeshwediy-coder.github.io/social-preview.png?v=4">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#7343D0">
+  <meta name="apple-mobile-web-app-title" content="SHWE TIER TDEE Calculator">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png?v=4">
+
+  <!-- Theme-aware tab icon, with PNG fallback for older browsers. -->
+  <link rel="icon" type="image/svg+xml" href="logo-white.svg?v=4" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/svg+xml" href="logo-dark.svg?v=4" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="favicon.png?v=4">
+
+  <title>SHWE TIER TDEE Calculator</title>
+  <link rel="manifest" href="manifest.json?v=4">
+</head>
+<body>
+  <script>
+    // Android in-app browsers cannot transfer an in-memory PNG to Chrome.
+    // They pass the small result route instead; restore it before Flutter
+    // starts so Chrome can recreate the same card for a real download tap.
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const handoff = params.get('handoff');
+      if (handoff && handoff.startsWith('/')) {
+        const clean = new URL(window.location.href);
+        clean.search = '';
+        clean.hash = handoff;
+        window.history.replaceState(null, '', clean);
+      }
+    })();
+  </script>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
